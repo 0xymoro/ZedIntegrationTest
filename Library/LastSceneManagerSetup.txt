@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/ZED/Scenes/RGB-Depth/RGBDepthScene.unity
+  isLoaded: 1
+  isActive: 1
