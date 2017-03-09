@@ -339,15 +339,16 @@ namespace sl
             /// <returns>A quaternion which contains the rotation</returns>
             public static Quaternion Matrix4ToQuaternion(Matrix4x4 m)
             {
-                Quaternion q = new Quaternion();
-                q.w = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] + m[1, 1] + m[2, 2])) / 2;
-                q.x = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] - m[1, 1] - m[2, 2])) / 2;
-                q.y = Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] + m[1, 1] - m[2, 2])) / 2;
-                q.z = Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] - m[1, 1] + m[2, 2])) / 2;
-                q.x *= Mathf.Sign(q.x * (m[2, 1] - m[1, 2]));
-                q.y *= Mathf.Sign(q.y * (m[0, 2] - m[2, 0]));
-                q.z *= Mathf.Sign(q.z * (m[1, 0] - m[0, 1]));
-                return q;
+                return Quaternion.identity; /////////////////////////////////////////////////////////
+                //Quaternion q = new Quaternion();
+                //q.w = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] + m[1, 1] + m[2, 2])) / 2;
+                //q.x = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] - m[1, 1] - m[2, 2])) / 2;
+                //q.y = Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] + m[1, 1] - m[2, 2])) / 2;
+                //q.z = Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] - m[1, 1] + m[2, 2])) / 2;
+                //q.x *= 0*Mathf.Sign(q.x * (m[2, 1] - m[1, 2])); //Sets them to zero to not track ZED's rotation (use Oculus's instead)
+                //q.y *= 0*Mathf.Sign(q.y * (m[0, 2] - m[2, 0])); //
+                //q.z *= 0*Mathf.Sign(q.z * (m[1, 0] - m[0, 1])); //
+                //return q;
             }
 
             /// <summary>

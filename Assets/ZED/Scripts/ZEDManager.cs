@@ -6,7 +6,7 @@ public class ZEDManager : MonoBehaviour {
     private float[] pos;
     private Matrix4x4 matrix;
 
-    public sl.zed.ZEDCamera.ZEDResolution_mode resolutionMode = sl.zed.ZEDCamera.ZEDResolution_mode.HD1080;
+    public sl.zed.ZEDCamera.ZEDResolution_mode resolutionMode = sl.zed.ZEDCamera.ZEDResolution_mode.HD720;
     public float requestedFPS = 0.0f;
     public sl.zed.ZEDCamera.MODE computingMode = sl.zed.ZEDCamera.MODE.PERFORMANCE;
 
