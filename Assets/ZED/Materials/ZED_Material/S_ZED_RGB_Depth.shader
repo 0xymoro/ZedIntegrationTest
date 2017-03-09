@@ -10,6 +10,7 @@
 	SubShader
 	{
 		// No culling or depth
+		cull off
 		ZWrite On
 		Tags{
 		"Queue" = "Background"
