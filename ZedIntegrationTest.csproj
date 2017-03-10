@@ -75,7 +75,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DisableTracking.cs" />
     <Compile Include="Assets\ZED\Scripts\Samples\ScreenManagerRGB.cs" />
     <Compile Include="Assets\ZED\Scripts\Samples\ScreenManagerRGBDepth.cs" />
     <Compile Include="Assets\ZED\Scripts\Samples\ZEDAsTexture.cs" />
