@@ -38,6 +38,7 @@ public class ZEDManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(1.0f / Time.deltaTime); //FRAMERATE////////////////////////////////////////////////////////////
         if (zedCamera != null)
         {
             //Grab is needed to the tracking and the rendering
