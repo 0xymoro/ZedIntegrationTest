@@ -26,19 +26,21 @@ public class ZEDManager : MonoBehaviour {
         {
             throw new Exception("Initialization failed " + e.ToString());
         }
-       
+
         pos = IdentityMatrix();
+
         if (this.tracking)
         {
             //Enables the tracking
             if (!(this.tracking = zedCamera.EnableTracking(pos, false)))
                 throw new Exception("Error, tracking not available");
         }
+
     }
-	
+
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(1.0f / Time.deltaTime); //FRAMERATE////////////////////////////////////////////////////////////
+        //Debug.Log(1.0f / Time.deltaTime); //FRAMERATE////////////////////////////////////////////////////////////
         if (zedCamera != null)
         {
             //Grab is needed to the tracking and the rendering
@@ -47,6 +49,7 @@ public class ZEDManager : MonoBehaviour {
                 //Fill the different textures
                 if(rendering)
                     zedCamera.Render();
+
 
                 if (this.tracking)
                 {
@@ -67,6 +70,7 @@ public class ZEDManager : MonoBehaviour {
                     transform.localRotation = rotation;
                     transform.localPosition = translate;
                 }
+
             }
         }
     }

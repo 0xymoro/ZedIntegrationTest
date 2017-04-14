@@ -33,7 +33,7 @@ public class ScreenManagerRGBDepth : MonoBehaviour {
         Matrix4x4 projectionMatrixQuad = zedCamera.Projection;
         projectionMatrixQuad[0, 2] = 0;
         projectionMatrixQuad[1, 2] = 0;
-        
+
         matRGB.SetMatrix("_ProjectionMatrix", sl.zed.ZEDCamera.FormatProjectionMatrix(projectionMatrixQuad, mainCamera.actualRenderingPath));
         //Set a new projection matrix to this camera, it's used by the tracking
         if (zedCamera.CameraIsReady && gameObject.transform.parent.GetComponent<ZEDManager>().tracking)

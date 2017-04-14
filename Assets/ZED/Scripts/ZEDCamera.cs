@@ -303,7 +303,7 @@ namespace sl
             /*
             [DllImport(nameDll, EntryPoint = "getTrackingFrameState")]
             private static extern int getTrackingFrameState();
-             
+
             [DllImport(nameDll, EntryPoint = "saveAreaLearningDB")]
             private static extern bool saveAreaLearningDB(string areaDBpath);
             */
@@ -365,7 +365,7 @@ namespace sl
                         m[1, i] = -m[1, i];
                     }
                 }
-            
+
                 return m;
             }
 
@@ -445,7 +445,7 @@ namespace sl
             /// <returns>ERRCODE : The error code gives information about the
             /// internal process, if SUCCESS is returned, the camera is ready to use.
             /// Every other code indicates an error and the program should be stopped.
-            /// 
+            ///
             /// For more details see sl::zed::ERRCODE.</returns>
             public ERRCODE Init(MODE mode_ = MODE.PERFORMANCE, UNIT unit_ = UNIT.METER, bool verbose_ = false, int device_ = -1, float minDist_ = -1, bool disable = false)
             {
@@ -460,7 +460,7 @@ namespace sl
                 heightImage = dllz_get_height();
 
                 FillProjectionMatrix();
-            
+
                 return ((ERRCODE)v);
             }
 
@@ -589,7 +589,7 @@ namespace sl
             /// <summary>
             /// Get the timestamp at the time the frame has been extracted from USB stream. (should be called after a grab())
             /// </summary>
-            /// <returns>Current Timestamp in ns. -1 is not available(SVO file without compression). 
+            /// <returns>Current Timestamp in ns. -1 is not available(SVO file without compression).
             /// Note that new SVO file from SDK 1.0.0 (with compression) contains the camera timestamp for each frame.</returns>
             public ulong GetCameraTimeStamp()
             {
@@ -832,7 +832,7 @@ namespace sl
 
             /*
             * Destroy a texture and free the registers
-            * 
+            *
             */
             private void DestroyTexture(int type, int option)
             {
@@ -850,7 +850,7 @@ namespace sl
 
             /*
             * Destroy all textures
-            * 
+            *
             */
             private void DestroyAllTexture()
             {
@@ -866,7 +866,7 @@ namespace sl
 
             /*
             * Destroy a texture created with CreateTextureViewType
-            * 
+            *
             */
             private void DestroyTextureViewType(int option)
             {
@@ -875,7 +875,7 @@ namespace sl
 
             /*
             * Destroy a texture created with CreateTextureImageType
-            * 
+            *
             */
             private void DestroyTextureImageType(int option)
             {
@@ -884,7 +884,7 @@ namespace sl
 
             /*
             * Destroy a texture created with CreateTextureMeasureType
-            * 
+            *
             */
             private void DestroyTextureMeasureType(int option)
             {
@@ -893,7 +893,7 @@ namespace sl
 
             /*
             * Destroy a texture created with CreateTextureNormalizeMeasureType
-            * 
+            *
             */
             private void DestroyTextureNormalizeMeasureType(int option)
             {
