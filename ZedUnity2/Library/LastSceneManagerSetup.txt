@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/ZED/Scenes/MRTest.unity
+  isLoaded: 1
+  isActive: 1
