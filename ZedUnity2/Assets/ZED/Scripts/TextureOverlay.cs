@@ -23,12 +23,15 @@ public class TextureOverlay : MonoBehaviour
     /// </summary>
     private Camera mainCamera;
 
-    //[Tooltip("Set the video type at the initialization")]
-    private sl.VIEW videoType;
 
 
-    public Texture2D camZedLeft;
-    //public Texture2D camZedRight;  TODO
+    //The zed perspective, depends on whether this script applies to
+    //the left camera or right
+    private Texture2D camZed;
+
+    //Left camera = 0, right camera = 1
+    public int whichCamera = 0;
+
 
 
     Texture2D depthXYZZed;
@@ -38,49 +41,25 @@ public class TextureOverlay : MonoBehaviour
     void Awake()
     {
         mainCamera = GetComponent<Camera>();
-        Hide();
         mainCamera.aspect = aspect;
     }
 
-    /// <summary>
-    /// Hide the screen to any other cameras
-    /// </summary>
-    private void Hide()
-    {
-        return; ///TODO WHAT IS THIS
-        gameObject.transform.GetChild(0).gameObject.layer = 20;
-        foreach (Camera c in Camera.allCameras)
-        {
-            if (c != mainCamera)
-            {
-                c.cullingMask = ~(1 << 20);
-            }
-        }
-    }
-
-    public void setVideoType(sl.VIEW view)
-    {
-        videoType = view;
-    }
 
     void Start()
     {
         //Set textures to the shader
         matRGB = canvas.GetComponent<Renderer>().material;
         sl.ZEDCamera zedCamera = sl.ZEDCamera.GetInstance();
-        if (videoType == sl.VIEW.LEFT_GREY || videoType == sl.VIEW.RIGHT_GREY || videoType == sl.VIEW.LEFT_UNRECTIFIED_GREY || videoType == sl.VIEW.RIGHT_UNRECTIFIED_GREY)
-        {
-            matRGB.SetInt("_isGrey", 1);
-        }
-        else
-        {
-            matRGB.SetInt("_isGrey", 0);
-        }
 
         //Create two textures and fill them with the ZED computed images
-        camZedLeft = zedCamera.CreateTextureImageType(videoType);
+        if (whichCamera == 0){
+          camZed = zedCamera.CreateTextureImageType(sl.VIEW.LEFT);
+        }
+        else if (whichCamera == 1){
+          camZed = zedCamera.CreateTextureImageType(sl.VIEW.RIGHT);
+        }
         depthXYZZed = zedCamera.CreateTextureMeasureType(sl.MEASURE.XYZ);
-        matRGB.SetTexture("_CameraTex", camZedLeft);
+        matRGB.SetTexture("_CameraTex", camZed);
         matRGB.SetTexture("_DepthXYZTex", depthXYZZed);
 
         if (zedCamera.CameraIsReady)
