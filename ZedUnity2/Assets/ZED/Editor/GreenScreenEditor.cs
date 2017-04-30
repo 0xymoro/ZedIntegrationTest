@@ -1,7 +1,3 @@
-/* DUE TO NONCOMPILE WITH TEXTUREOVERLAY CHANGES
-
-
-
 ﻿#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
@@ -56,7 +52,7 @@ class GreenScreenManagerEditor : Editor
         {
             EditorWindow.GetWindow(typeof(ZEDEditor), false, "ZED Camera").Show();
         }
-
+        
         serializedObject.ApplyModifiedProperties();
     }
 
@@ -114,5 +110,3 @@ class GreenScreenManagerEditor : Editor
     }
 }
 #endif
-
-*/

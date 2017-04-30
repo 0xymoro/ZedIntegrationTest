@@ -1,9 +1,3 @@
-/* DUE TO NONCOMPILE WITH TEXTUREOVERLAY CHANGES
-
-
-
-
-
 ﻿
 using UnityEngine;
 using System.IO;
@@ -63,19 +57,19 @@ public class GreenScreenManager : MonoBehaviour
     /// <summary>
     /// Array of available similarity
     /// </summary>
-    ///
+    /// 
      [SerializeField]
     public float smoothness;
     /// <summary>
     /// Array of available blend
     /// </summary>
-    ///
+    /// 
      [SerializeField]
     public float range;
     /// <summary>
     /// Array of available blend
     /// </summary>
-    ///
+    /// 
      [SerializeField]
     public float spill = 0.2f;
     /// <summary>
@@ -85,7 +79,7 @@ public class GreenScreenManager : MonoBehaviour
     /// <summary>
     /// DEfault similarity
     /// </summary>
-    ///
+    /// 
 
     private const float defaultSmoothness = 0.08f;
     /// <summary>
@@ -426,7 +420,7 @@ public class GreenScreenManager : MonoBehaviour
 
     }
 
-    // Update the current number of colors used in the shader
+    // Update the current number of colors used in the shader 
     public void UpdateNumberColors()
     {
         if (greenScreenMat != null)
@@ -439,7 +433,7 @@ public class GreenScreenManager : MonoBehaviour
     {
         float[] weights = new float[5];
         float[] offsets = { 0.0f, 1.0f, 2.0f, 3.0f, 4.0f };
-        // Calculate the weights
+        // Calculate the weights 
         weights[0] = Gaussian(0, sigma);
         float sum = weights[0];
         for (int i = 1; i < 5; ++i)
@@ -453,7 +447,7 @@ public class GreenScreenManager : MonoBehaviour
             weights[i] /= sum;
         }
 
-        // fix for just 3 fetches
+        // fix for just 3 fetches 
         weights_[0] = weights[0];
         weights_[1] = weights[1] + weights[2];
         weights_[2] = weights[3] + weights[4];
@@ -512,7 +506,7 @@ public class GreenScreenManager : MonoBehaviour
     {
         if (screenManager.camZedLeft == null || screenManager.camZedLeft.width == 0) return;
         if (canal.Equals(CANAL.FOREGROUND)) return;
-
+        
 		RenderTexture tempYUV = RenderTexture.GetTemporary(screenManager.camZedLeft.width, screenManager.camZedLeft.height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
 		RenderTexture tempYUVBlur = RenderTexture.GetTemporary(screenManager.camZedLeft.width, screenManager.camZedLeft.height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
 
@@ -546,7 +540,7 @@ public class GreenScreenManager : MonoBehaviour
         {
             Graphics.Blit(tempFinalAlpha, finalTexture);
         }
-
+        
 
         //Destroy all the temporary buffers
         RenderTexture.ReleaseTemporary(tempYUVBlur);
@@ -560,4 +554,6 @@ public class GreenScreenManager : MonoBehaviour
         return (1.0f / (2.0f * Mathf.PI * sigma)) * Mathf.Exp(-((x * x) / (2.0f * sigma)));
     }
 }
-*/
+
+
+
