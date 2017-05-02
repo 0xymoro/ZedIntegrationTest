@@ -379,6 +379,10 @@ namespace sl
             return 30;
         }
 
+
+        //NOTICE: for this system, use Oculus's IMU for 3DoF rotation, then 
+        //ZED's inside out for the 3DoF translation.  This is disabling
+        //ZED's rotation to avoid double rotation
         /// <summary>
         /// Get a quaternion from a matrix with a minimum size of 3x3
         /// </summary>
