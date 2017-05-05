@@ -76,8 +76,8 @@ public class ZEDManagerVR : MonoBehaviour
         {
             throw new Exception("Initialization failed " + e.ToString());
         }
-      
-        
+
+
 
         if (ZedSVOManager != null)
         {
@@ -129,7 +129,7 @@ public class ZEDManagerVR : MonoBehaviour
                     throw new Exception("Error, tracking not available");
                 }
             }
-           
+
 #else
                 Quaternion quat = UnityEngine.VR.InputTracking.GetLocalRotation(UnityEngine.VR.VRNode.Head);
                 Vector3 vec = new Vector3(0, 0, 0);
@@ -143,7 +143,7 @@ public class ZEDManagerVR : MonoBehaviour
 
     }
 
-    
+
 
     /// <summary>
     /// Get the tracking position from the ZED and update the manager's position
@@ -154,7 +154,7 @@ public class ZEDManagerVR : MonoBehaviour
 
         Quaternion diffRotation = Quaternion.identity;
         Quaternion rotationHMD = Quaternion.identity;
-      
+
         Quaternion orientationPose = Quaternion.identity;
         //Get the pose with an offset
 
@@ -169,6 +169,7 @@ public class ZEDManagerVR : MonoBehaviour
 
         // Get motion tracking in world reference frame.
         zedCamera.GetPosition(ref orientation, ref world_pose_translation, sl.REFERENCE_FRAME.WORLD);
+
         if (headset)
         {
             rotationHMD = UnityEngine.VR.InputTracking.GetLocalRotation(UnityEngine.VR.VRNode.Head);
@@ -211,7 +212,7 @@ public class ZEDManagerVR : MonoBehaviour
                     cumul += distance / numberTick;
                     start = cumul;
                     destination.x = cumul.x;
-                    destination.z = cumul.z;   
+                    destination.z = cumul.z;
                     distance = (destination - start);
 
                     numberTick--;

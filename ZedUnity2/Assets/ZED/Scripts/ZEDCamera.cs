@@ -38,7 +38,7 @@ namespace sl
         //List of all textures using the type as unique key
         private Dictionary<int, Dictionary<int, Texture2D>> textures;
 
-        //List of all requested textures 
+        //List of all requested textures
         private List<TextureRequested> texturesRequested;
 
         //Width of the textures
@@ -126,7 +126,7 @@ namespace sl
 
 
         /*
-         * Create functions 
+         * Create functions
          */
         [DllImport(nameDll, EntryPoint = "dllz_create_camera_live")]
         private static extern void dllz_create_camera_live(int mode = (int)RESOLUTION.HD1080, float fps = 0.0f, int linux_id = 0);
@@ -217,7 +217,7 @@ namespace sl
         [DllImport(nameDll, EntryPoint = "dllz_get_camera_information")]
         private static extern IntPtr dllz_get_camera_information();
 
- 
+
         [DllImport(nameDll, EntryPoint = "dllz_set_camera_settings")]
         private static extern void dllz_set_camera_settings(int mode, int value, int usedefault);
 
@@ -227,7 +227,7 @@ namespace sl
         [DllImport(nameDll, EntryPoint = "dllz_is_zed_connected")]
         private static extern int dllz_is_zed_connected();
 
-     
+
         [DllImport(nameDll, EntryPoint = "dllz_get_camera_timestamp")]
         private static extern ulong dllz_get_camera_timestamp();
 
@@ -277,7 +277,7 @@ namespace sl
         [DllImport(nameDll, EntryPoint = "dllz_get_depth_min_range_value")]
         private static extern float dllz_get_depth_min_range_value();
 
-       
+
         /*
          * Motion Tracking functions
          */
@@ -299,7 +299,7 @@ namespace sl
         [DllImport(nameDll, EntryPoint = "dllz_transform_pose")]
         private static extern void dllz_transform_pose(ref Quaternion quaternion, ref Vector3 translation, ref Quaternion targetQuaternion, ref Vector3 targetTranslation);
 
- 
+
         /*
          * Specific plugin functions
          */
@@ -380,9 +380,6 @@ namespace sl
         }
 
 
-        //NOTICE: for this system, use Oculus's IMU for 3DoF rotation, then 
-        //ZED's inside out for the 3DoF translation.  This is disabling
-        //ZED's rotation to avoid double rotation
         /// <summary>
         /// Get a quaternion from a matrix with a minimum size of 3x3
         /// </summary>
@@ -391,11 +388,12 @@ namespace sl
         public static Quaternion Matrix4ToQuaternion(Matrix4x4 m)
         {
             Quaternion q = new Quaternion();
-            q.w = 0;//Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] + m[1, 1] + m[2, 2])) / 2;
-            q.x = 0;//Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] - m[1, 1] - m[2, 2])) / 2;
-            q.y = 0;//Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] + m[1, 1] - m[2, 2])) / 2;
-            q.z = 0;//Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] - m[1, 1] + m[2, 2])) / 2;
             /*
+            q.w = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] + m[1, 1] + m[2, 2])) / 2;
+            q.x = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] - m[1, 1] - m[2, 2])) / 2;
+            q.y = Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] + m[1, 1] - m[2, 2])) / 2;
+            q.z = Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] - m[1, 1] + m[2, 2])) / 2;
+
             q.x *= Mathf.Sign(q.x * (m[2, 1] - m[1, 2]));
             q.y *= Mathf.Sign(q.y * (m[0, 2] - m[2, 0]));
             q.z *= Mathf.Sign(q.z * (m[1, 0] - m[0, 1]));
@@ -526,7 +524,7 @@ namespace sl
         {
             while (running)
             {
-               
+
                 float timePerTick = 1000.0f / fpsMax;
                 timer.Reset();
                 lock (grabLock)
@@ -626,7 +624,7 @@ namespace sl
         /// <returns>ERROR_CODE : The error code gives information about the
         /// internal process, if SUCCESS is returned, the camera is ready to use.
         /// Every other code indicates an error and the program should be stopped.
-        /// 
+        ///
         /// For more details see sl::zed::ERRCODE.</returns>
         public ERROR_CODE Init(DEPTH_MODE mode_ = DEPTH_MODE.PERFORMANCE, float minDist_ = -1, bool disable = false)
         {
@@ -807,7 +805,7 @@ namespace sl
         /// <summary>
         /// Get the time stamp at the time the frame has been extracted from USB stream. (should be called after a grab())
         /// </summary>
-        /// <returns>Current time stamp in ns. -1 is not available(SVO file without compression). 
+        /// <returns>Current time stamp in ns. -1 is not available(SVO file without compression).
         /// Note that new SVO file from SDK 1.0.0 (with compression) contains the camera time stamp for each frame.</returns>
         public ulong GetCameraTimeStamp()
         {
@@ -816,7 +814,7 @@ namespace sl
         }
 
         /// <summary>
-        /// Get the current time stamp at the time the function is called. Can be compared to the camera time stamp for synchronization. 
+        /// Get the current time stamp at the time the function is called. Can be compared to the camera time stamp for synchronization.
         /// Use this function to compare the current time stamp and the camera time stamp, since they have the same reference (Computer start time).
         /// </summary>
         /// <returns>The timestamp</returns>
@@ -834,7 +832,7 @@ namespace sl
         {
             return dllz_get_image_updater_time_stamp();
         }
- 
+
         /// <summary>
         /// Get the current position of the SVO in the record
         /// </summary>
@@ -1124,7 +1122,7 @@ namespace sl
             }
         }
         /// <summary>
-        /// True when the initialization of the ZED has succeeded. 
+        /// True when the initialization of the ZED has succeeded.
         /// </summary>
         public bool CameraIsReady
         {
@@ -1244,7 +1242,7 @@ namespace sl
         }
 
         /// <summary>
-        /// Gets the calibration status 
+        /// Gets the calibration status
         /// </summary>
         /// <returns>The calibration status</returns>
         public ZED_SELF_CALIBRATION_STATE GetSelfCalibrationStatus()
@@ -1263,7 +1261,7 @@ namespace sl
         }
 
         /// <summary>
-        /// Get the number of frame dropped since grab() has been called for the first time 
+        /// Get the number of frame dropped since grab() has been called for the first time
         /// Based on camera time stamp and fps comparison.
         /// </summary>
         /// <returns>number	of frame dropped since first grab() call.</returns>
@@ -1287,7 +1285,7 @@ namespace sl
 
         /// <summary>
         /// Get the current position of the camera with an optionnal transformation of the camera frame/motion tracking frame.
-        /// 
+        ///
         /// </summary>
         /// <param name="quat"></param>
         /// <param name="vec"></param>

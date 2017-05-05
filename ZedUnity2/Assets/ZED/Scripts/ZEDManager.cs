@@ -154,8 +154,8 @@ public class ZEDManager : MonoBehaviour
     private void UpdateTracking()
     {
         zedCamera.GetPosition(ref orientation, ref position);
-
-        transform.localRotation = orientation;
+        //Disable orientation because of Rift's IMU
+        //transform.localRotation = orientation;
         transform.localPosition = position;
     }
 
@@ -204,7 +204,7 @@ public class ZEDManager : MonoBehaviour
                             }
                         }
 
-                        
+
                     }
                 }
 
