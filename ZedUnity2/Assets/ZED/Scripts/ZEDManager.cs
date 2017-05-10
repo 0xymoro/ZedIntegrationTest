@@ -49,10 +49,9 @@ public class ZEDManager : MonoBehaviour
     private bool spatialMemory = true;
     void Awake()
     {
+        //Position later gets updated every update tracking call
         positionInit = transform.localPosition;
-        rotationInit = transform.localRotation;
         position = positionInit;
-        orientation = Quaternion.identity;
 
         isThreaded = multithreading;
         zedCamera = sl.ZEDCamera.GetInstance();
@@ -108,6 +107,12 @@ public class ZEDManager : MonoBehaviour
 
     private void Start()
     {
+        //Getting camera's rotation to align ZED's axes to Rift's IMU
+        //This does not change throughout the course of runtime
+        rotationInit = Quaternion.Inverse(GameObject.Find("/ZED_Rig/Camera_Left").transform.localRotation);
+        transform.rotation = rotationInit;
+
+
         if (tracking && UnityEngine.VR.VRSettings.enabled && multithreading)
         {
             multithreading = false;
@@ -154,8 +159,7 @@ public class ZEDManager : MonoBehaviour
     private void UpdateTracking()
     {
         zedCamera.GetPosition(ref orientation, ref position);
-        //Disable orientation because of Rift's IMU
-        //transform.localRotation = orientation;
+        //Disable orientation because of Rift's IMU set as the initial rotation
         transform.localPosition = position;
     }
 

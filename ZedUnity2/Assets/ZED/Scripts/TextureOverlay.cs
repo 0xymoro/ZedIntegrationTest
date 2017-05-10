@@ -37,7 +37,6 @@ public class TextureOverlay : MonoBehaviour
     Texture2D depthXYZZed;
     CommandBuffer buffer;
 
-    //public RenderTexture mask;
     void Awake()
     {
         mainCamera = GetComponent<Camera>();
