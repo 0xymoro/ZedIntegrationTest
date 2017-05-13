@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZedUnity2.Plugins", "ZedUnity2.Plugins.csproj", "{A8DDCC03-56F3-3DFB-2ED9-8597FF727F0D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZedUnity2", "ZedUnity2.csproj", "{07EAF35E-8E1C-7512-9B64-BD71E3F72F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZedUnity2.Editor.Plugins", "ZedUnity2.Editor.Plugins.csproj", "{7CC4B50B-A34D-FE94-CD4B-1773C9A77FB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZedUnity2.Editor", "ZedUnity2.Editor.csproj", "{8F47EB7E-C41F-A4E9-6DA9-48258BA8DDFC}"
 EndProject
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8DDCC03-56F3-3DFB-2ED9-8597FF727F0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DDCC03-56F3-3DFB-2ED9-8597FF727F0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DDCC03-56F3-3DFB-2ED9-8597FF727F0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DDCC03-56F3-3DFB-2ED9-8597FF727F0D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07EAF35E-8E1C-7512-9B64-BD71E3F72F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07EAF35E-8E1C-7512-9B64-BD71E3F72F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07EAF35E-8E1C-7512-9B64-BD71E3F72F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07EAF35E-8E1C-7512-9B64-BD71E3F72F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC4B50B-A34D-FE94-CD4B-1773C9A77FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC4B50B-A34D-FE94-CD4B-1773C9A77FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC4B50B-A34D-FE94-CD4B-1773C9A77FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC4B50B-A34D-FE94-CD4B-1773C9A77FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F47EB7E-C41F-A4E9-6DA9-48258BA8DDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F47EB7E-C41F-A4E9-6DA9-48258BA8DDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F47EB7E-C41F-A4E9-6DA9-48258BA8DDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
