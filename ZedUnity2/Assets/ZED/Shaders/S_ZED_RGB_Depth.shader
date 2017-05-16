@@ -5,13 +5,13 @@
 		[HideInInspector] _MainTex("Base (RGB) Trans (A)", 2D) = "" {}
 		_DepthXYZTex("Depth texture", 2D) = "" {}
 		_CameraTex("Texture from ZED", 2D) = "" {}
-	
+
 	}
 	SubShader
 	{
 		// No culling or depth
 		Cull Off
-		ZWrite On
+		ZWrite Off
 		Tags{
 		"RenderType" = "Opaque"
 		"Queue" = "Geometry"
@@ -20,7 +20,7 @@
 
 		Pass
 		{
-		
+
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -40,7 +40,7 @@
 			{
 				float2 uv : TEXCOORD0;
 				float4 vertex : SV_POSITION;
-				
+
 			};
 
 			struct fragOut {
@@ -54,7 +54,7 @@
 			uniform float4 _MaskTex_ST;
 			float4 _MainTex_ST;
 			uniform int _isGrey;
-		
+
 
 			v2f vert(appdata v)
 			{

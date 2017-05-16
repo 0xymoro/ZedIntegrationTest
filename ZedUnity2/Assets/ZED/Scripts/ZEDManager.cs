@@ -170,10 +170,12 @@ public class ZEDManager : MonoBehaviour
         {
             if (isThreaded || zedCamera.Grab() == 0)
             {
+
                 if (tracking)
                 {
                     UpdateTracking();
                 }
+
 
                 if (videoOverlay)
                 {
@@ -215,6 +217,7 @@ public class ZEDManager : MonoBehaviour
             }
         }
     }
+
 
 
     void OnApplicationQuit()

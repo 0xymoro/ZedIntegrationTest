@@ -94,7 +94,8 @@ public class TextureOverlay : MonoBehaviour
     /// <param name="fov"></param>
     private void scale(GameObject screen, float fov)
     {
-        float height = Mathf.Tan(0.5f * fov) * 2.0f;
-        screen.transform.localScale = new Vector3(height * aspect, height, 1);
+        Vector3 oldScales = screen.transform.localScale;
+        //float height = Mathf.Tan(0.5f * fov) * 2.0f;
+        screen.transform.localScale = new Vector3(oldScales.y * aspect, oldScales.y, 1);
     }
 }
