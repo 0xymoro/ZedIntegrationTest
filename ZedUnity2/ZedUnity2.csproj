@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ZED\Scripts\GreenScreenManager.cs" />
+    <Compile Include="Assets\ZED\Scripts\OffsetNeckModel.cs" />
     <Compile Include="Assets\ZED\Scripts\SVOManager.cs" />
     <Compile Include="Assets\ZED\Scripts\TextureOverlay.cs" />
     <Compile Include="Assets\ZED\Scripts\ZEDCamera.cs" />
