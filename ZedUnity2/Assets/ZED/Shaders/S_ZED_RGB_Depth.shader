@@ -9,7 +9,7 @@
 	}
 	SubShader
 	{
-		// No culling or depth
+		// No culling, no depth
 		Cull Off
 		ZWrite Off
 		Tags{

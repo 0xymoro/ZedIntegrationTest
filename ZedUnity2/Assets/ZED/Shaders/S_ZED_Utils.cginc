@@ -9,6 +9,10 @@
 
 //Compute the depth of ZED to the Unity scale
 float computeDepthXYZ(float3 colorXYZ) {
+
+//DISABLE DEPTH!!!
+return MAX_DEPTH;
+
 if(isinf(colorXYZ.r)) return MAX_DEPTH;
 if(colorXYZ.r != colorXYZ.r) return MIN_DEPTH;
 	//reverse Y and Z axes
@@ -50,4 +54,3 @@ float computeAlphaYUVFromYUV(float3 colorCamera, in float3 keyColor) {
 	float3 mask = RGBtoYUV(keyColor);
 	return distance(float2(mask.y, mask.z), float2(colorCamera.y, colorCamera.z));
 }
-

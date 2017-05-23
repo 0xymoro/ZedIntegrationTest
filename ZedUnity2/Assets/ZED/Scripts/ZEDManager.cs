@@ -109,6 +109,7 @@ public class ZEDManager : MonoBehaviour
     {
         //Getting camera's rotation to align ZED's axes to Rift's IMU
         //This does not change throughout the course of runtime
+        //MAKE SURE THIS PATH IS CORRECT!!
         rotationInit = Quaternion.Inverse(GameObject.Find("/ZED_Rig/Camera_Left").transform.localRotation);
         transform.rotation = rotationInit;
 
