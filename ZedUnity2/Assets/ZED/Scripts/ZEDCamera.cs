@@ -388,7 +388,7 @@ namespace sl
         public static Quaternion Matrix4ToQuaternion(Matrix4x4 m)
         {
             Quaternion q = new Quaternion();
-            
+
             q.w = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] + m[1, 1] + m[2, 2])) / 2;
             q.x = Mathf.Sqrt(Mathf.Max(0, 1 + m[0, 0] - m[1, 1] - m[2, 2])) / 2;
             q.y = Mathf.Sqrt(Mathf.Max(0, 1 - m[0, 0] + m[1, 1] - m[2, 2])) / 2;

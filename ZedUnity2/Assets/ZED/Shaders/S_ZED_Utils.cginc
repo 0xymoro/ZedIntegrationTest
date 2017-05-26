@@ -1,3 +1,9 @@
+/*
+Depth clamping: the original min value was 0.001, but due to the error
+with ZED's close range occlusion, clamp is set to ignore near field
+depth map and only regard far field depth map
+*/
+
 
 #if UNITY_VERSION >= 550
 #define MAX_DEPTH 0.001f
@@ -10,11 +16,10 @@
 //Compute the depth of ZED to the Unity scale
 float computeDepthXYZ(float3 colorXYZ) {
 
-//DISABLE DEPTH!!!
-return MAX_DEPTH;
-
 if(isinf(colorXYZ.r)) return MAX_DEPTH;
+
 if(colorXYZ.r != colorXYZ.r) return MIN_DEPTH;
+
 	//reverse Y and Z axes
 	colorXYZ.b = -colorXYZ.b;
 	colorXYZ.g = -colorXYZ.g;

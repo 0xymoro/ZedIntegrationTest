@@ -9,9 +9,9 @@
 	}
 	SubShader
 	{
-		// No culling, no depth
+		// No culling, yes depth
 		Cull Off
-		ZWrite Off
+		ZWrite On
 		Tags{
 		"RenderType" = "Opaque"
 		"Queue" = "Geometry"

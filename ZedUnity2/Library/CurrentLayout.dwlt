@@ -297,19 +297,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/ZED/Shaders
+    - Assets/ZED/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/ZED/Shaders
+  - Assets/ZED/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\RHVR1\Desktop\v.OS Local\ZedIntegrationTest\ZedUnity2
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c260000
-    m_LastClickedID: 9836
-    m_ExpandedIDs: 0000000076250000dc250000fc250000782600003e27000040270000422700004427000000ca9a3bffffff7f
+    m_SelectedIDs: e4250000
+    m_LastClickedID: 9700
+    m_ExpandedIDs: 0000000074250000da250000fa250000762600003e27000040270000422700004427000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -337,7 +337,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000076250000dc250000fc250000782600003e270000402700004227000044270000
+    m_ExpandedIDs: 0000000074250000da250000fa250000762600003e270000402700004227000044270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -453,9 +453,9 @@ MonoBehaviour:
     height: 404
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c6260000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e4fbffff00000000ec260000f2260000
+    m_ExpandedIDs: e2fbffffe4fbffff00000000ec260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.17626628, y: 0.5859671, z: -0.1324611, w: -0.77976066}
     speed: 2
-    m_Value: {x: -0.1762663, y: 0.5859672, z: -0.13246112, w: -0.7797607}
+    m_Value: {x: -0.17626628, y: 0.5859671, z: -0.1324611, w: -0.77976066}
   m_Size:
     m_Target: 288.8605
     speed: 2
@@ -586,8 +586,8 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-    m_HBaseRangeMin: -344
-    m_HBaseRangeMax: 344
+    m_HBaseRangeMin: -632.5
+    m_HBaseRangeMax: 632.5
     m_VBaseRangeMin: -193.5
     m_VBaseRangeMax: 193.5
     m_HAllowExceedBaseRangeMin: 1

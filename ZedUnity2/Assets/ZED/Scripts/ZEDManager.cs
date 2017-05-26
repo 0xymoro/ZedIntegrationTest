@@ -38,6 +38,8 @@ public class ZEDManager : MonoBehaviour
     /// </summary>
     public bool tracking = true;
 
+    public float minDist = 2;
+
     private bool isThreaded = false;
 
     private Quaternion orientation;
@@ -82,8 +84,9 @@ public class ZEDManager : MonoBehaviour
 
         Debug.Log("ZED SDK Version " + sl.ZEDCamera.GetSDKVersion());
 
-        //Initialize the camera in performance mode.
-        sl.ERROR_CODE e = zedCamera.Init(depthMode);
+        //Initialize the camera in performance mode, make minimum depth
+        //be minDist meters to avoid inaccurate hand occlusions
+        sl.ERROR_CODE e = zedCamera.Init(depthMode, minDist);
 
         if (e != sl.ERROR_CODE.SUCCESS)
         {
