@@ -368,18 +368,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 0e270000be250000be240000480af9ff9e24000096240000542400004e2400004624000044240000f8250000d6290000602400000000000060260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ZED_Plugins
-      m_OriginalName: ZED_Plugins
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 9938
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -453,7 +453,7 @@ MonoBehaviour:
     height: 404
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d2260000
+    m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
